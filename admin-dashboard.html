@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .sidebar { height: 100%; width: 250px; position: fixed; top: 0; left: 0; background-color: #343a40; color: white; padding-top: 20px; }
+        .sidebar a { color: white; padding: 15px; text-decoration: none; display: block; }
+        .sidebar a:hover { background-color: #575757; }
+        .content { margin-left: 260px; padding: 20px; }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h3>Admin Panel</h3>
+        <a href="#dashboard">Dashboard</a>
+        <a href="#menu-management">Menu Management</a>
+        <a href="#feedback">Feedback & Ratings</a>
+        <a href="#complaints">Complaints Management</a>
+        <a href="#food-waste">Food Waste Management</a>
+        <a href="#user-management">User Management</a>
+        <a href="#notifications">Notifications</a>
+        <a href="#reports">Reports</a>
+    </div>
+    <div class="content">
+        <h1>Admin Dashboard</h1>
+        <div id="dashboard">
+            <h2>Analytics</h2>
+            <canvas id="analyticsChart"></canvas>
+        </div>
+        <div id="menu-management">
+            <h2>Menu Management</h2>
+            <!-- Menu management functionality here -->
+        </div>
+        <div id="feedback">
+            <h2>Feedback & Ratings</h2>
+            <!-- Feedback and ratings viewer here -->
+        </div>
+        <div id="complaints">
+            <h2>Complaints Management</h2>
+            <!-- Complaint management functionality here -->
+        </div>
+        <div id="food-waste">
+            <h2>Food Waste Management</h2>
+            <!-- Food waste management functionality here -->
+        </div>
+        <div id="user-management">
+            <h2>User Management</h2>
+            <!-- User management functionality here -->
+        </div>
+        <div id="notifications">
+            <h2>Notifications</h2>
+            <!-- Notification system here -->
+        </div>
+        <div id="reports">
+            <h2>Reports Generation</h2>
+            <!-- Reports generation functionality here -->
+        </div>
+    </div>
+    <script>
+        const ctx = document.getElementById('analyticsChart').getContext('2d');
+        const analyticsChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['January', 'February', 'March', 'April', 'May', 'June'],
+                datasets: [{
+                    label: 'Food Waste',
+                    data: [12, 19, 3, 5, 2, 3],
+                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                    borderColor: 'rgba(255, 99, 132, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
