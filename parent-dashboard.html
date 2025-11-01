@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parent Dashboard</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            background: linear-gradient(to right, #11998e, #38ef7d);
+            color: white;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 10px;
+        }
+
+        .form-section {
+            margin-top: 20px;
+        }
+
+        canvas {
+            max-width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="text-center my-4">Parent Dashboard</h1>
+        
+        <div class="row">
+            <div class="col-md-3 stat-card">
+                <h5>Child Name</h5>
+                <p id="childName">John Doe</p>
+            </div>
+            <div class="col-md-3 stat-card">
+                <h5>Attendance Percentage</h5>
+                <p id="attendancePercentage">95%</p>
+            </div>
+            <div class="col-md-3 stat-card">
+                <h5>Average Rating</h5>
+                <p id="averageRating">4.5</p>
+            </div>
+            <div class="col-md-3 stat-card">
+                <h5>Meals Count</h5>
+                <p id="mealsCount">30</p>
+            </div>
+        </div>
+
+        <div class="row my-4">
+            <div class="col-md-6">
+                <h3>LIVE Ratings</h3>
+                <p id="liveRatings">Loading...</p>
+            </div>
+            <div class="col-md-6">
+                <h3>Weekly Menu</h3>
+                <table class="table table-dark">
+                    <thead>
+                        <tr>
+                            <th>Day</th>
+                            <th>Menu</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Monday</td><td>Vegetable Curry</td></tr>
+                        <tr><td>Tuesday</td><td>Chicken Rice</td></tr>
+                        <tr><td>Wednesday</td><td>Pasta</td></tr>
+                        <tr><td>Thursday</td><td>Fish Fry</td></tr>
+                        <tr><td>Friday</td><td>Fried Rice</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="form-section">
+            <h3>Contact Warden</h3>
+            <form id="contactWardenForm">
+                <div class="mb-3">
+                    <label for="wardenMessage" class="form-label">Message</label>
+                    <textarea class="form-control" id="wardenMessage" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+        </div>
+
+        <div class="form-section">
+            <h3>Submit Complaint</h3>
+            <form id="complaintForm">
+                <div class="mb-3">
+                    <label for="complaintMessage" class="form-label">Complaint</label>
+                    <textarea class="form-control" id="complaintMessage" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-danger">Submit Complaint</button>
+            </form>
+        </div>
+
+        <div class="row my-4">
+            <div class="col-md-6">
+                <h3>Child's Attendance Statistics</h3>
+                <canvas id="attendanceChart"></canvas>
+            </div>
+            <div class="col-md-6">
+                <h3>Rating Trend</h3>
+                <canvas id="ratingTrendChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Function to update live ratings every 5 seconds
+        setInterval(() => {
+            // Simulated live ratings update
+            const ratings = Math.floor(Math.random() * 5) + 1;
+            document.getElementById('liveRatings').innerText = `Current Rating: ${ratings}`;
+        }, 5000);
+
+        // Function for handling form submissions
+        document.getElementById('contactWardenForm').onsubmit = function(event) {
+            event.preventDefault();
+            alert('Message sent to the warden!');
+        };
+
+        document.getElementById('complaintForm').onsubmit = function(event) {
+            event.preventDefault();
+            alert('Complaint submitted!');
+        };
+
+        // Chart.js for attendance statistics
+        const ctxAttendance = document.getElementById('attendanceChart').getContext('2d');
+        const attendanceChart = new Chart(ctxAttendance, {
+            type: 'doughnut',
+            data: {
+                labels: ['Present', 'Absent'],
+                datasets: [{
+                    data: [30, 5],
+                    backgroundColor: ['#36A2EB', '#FF6384'],
+                }]
+            }
+        });
+
+        // Chart.js for rating trend
+        const ctxRatingTrend = document.getElementById('ratingTrendChart').getContext('2d');
+        const ratingTrendChart = new Chart(ctxRatingTrend, {
+            type: 'line',
+            data: {
+                labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+                datasets: [{
+                    label: 'Rating Trend',
+                    data: [4.2, 4.5, 4.8, 4.6],
+                    borderColor: '#FF6384',
+                    fill: false
+                }]
+            }
+        });
+    </script>
+</body>
+
+</html>
