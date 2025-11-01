@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Mess Management System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .hero-section {
+            padding: 50px 0;
+            color: white;
+        }
+        .login-card {
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            border: none;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .login-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+        }
+        .icon-circle {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: rgba(102, 126, 234, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+        }
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        .feature-card {
+            border: none;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background: rgba(0,0,0,0.2);">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-utensils"></i> College Mess Management
+            </a>
+        </div>
+    </nav>
+
+    <div class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4">
+                    <h1 class="display-4 fw-bold mb-4">Welcome to College Mess Management System</h1>
+                    <p class="lead mb-4">A comprehensive solution for managing college mess operations, reducing food waste, and improving student satisfaction.</p>
+                    <div class="features-list mb-4">
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle text-warning"></i>
+                            <span>Real-time Student Feedback & Ratings</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle text-warning"></i>
+                            <span>Parent Portal with Live Updates</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle text-warning"></i>
+                            <span>Food Waste Management</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle text-warning"></i>
+                            <span>Complete Admin Analytics</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="login-cards">
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <div class="card login-card" onclick="window.location.href='student-login.html'">
+                                    <div class="card-body text-center p-4">
+                                        <div class="icon-circle mb-3">
+                                            <i class="fas fa-user-graduate fa-3x text-primary"></i>
+                                        </div>
+                                        <h5 class="card-title">Student Portal</h5>
+                                        <p class="card-text text-muted">Mark attendance, rate food, give feedback</p>
+                                        <button class="btn btn-primary w-100 mt-2">Login as Student</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card login-card" onclick="window.location.href='parent-login.html'">
+                                    <div class="card-body text-center p-4">
+                                        <div class="icon-circle mb-3">
+                                            <i class="fas fa-users fa-3x text-success"></i>
+                                        </div>
+                                        <h5 class="card-title">Parent Portal</h5>
+                                        <p class="card-text text-muted">View menus, live ratings, contact warden</p>
+                                        <button class="btn btn-success w-100 mt-2">Login as Parent</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card login-card" onclick="window.location.href='admin-login.html'">
+                                    <div class="card-body text-center p-4">
+                                        <div class="icon-circle mb-3">
+                                            <i class="fas fa-user-shield fa-3x text-danger"></i>
+                                        </div>
+                                        <h5 class="card-title">Admin Panel</h5>
+                                        <p class="card-text text-muted">Manage system, analytics, reports</p>
+                                        <button class="btn btn-danger w-100 mt-2">Login as Admin</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card login-card" onclick="window.location.href='admin-login.html'">
+                                    <div class="card-body text-center p-4">
+                                        <div class="icon-circle mb-3">
+                                            <i class="fas fa-user-tie fa-3x text-warning"></i>
+                                        </div>
+                                        <h5 class="card-title">Warden Portal</h5>
+                                        <p class="card-text text-muted">Handle complaints, manage mess</p>
+                                        <button class="btn btn-warning w-100 mt-2">Login as Warden</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container my-5">
+        <div class="bg-white rounded p-5 shadow">
+            <h2 class="text-center mb-5">System Features</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card feature-card h-100">
+                        <div class="card-body text-center p-4">
+                            <i class="fas fa-chart-line fa-3x text-primary mb-3"></i>
+                            <h5 class="card-title">Real-time Analytics</h5>
+                            <p class="card-text">Track ratings, attendance, and food preferences with live dashboards and charts.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card feature-card h-100">
+                        <div class="card-body text-center p-4">
+                            <i class="fas fa-leaf fa-3x text-success mb-3"></i>
+                            <h5 class="card-title">Reduce Food Waste</h5>
+                            <p class="card-text">Meal attendance tracking helps prepare the right amount of food, reducing waste.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card feature-card h-100">
+                        <div class="card-body text-center p-4">
+                            <i class="fas fa-comments fa-3x text-info mb-3"></i>
+                            <h5 class="card-title">Better Communication</h5>
+                            <p class="card-text">Direct communication channel between parents, students, and mess management.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white text-center py-4 mt-5">
+        <div class="container">
+            <p class="mb-0">&copy; 2025 College Mess Management System. All rights reserved.</p>
+            <p class="mb-0"><small>Built for better mess management and student satisfaction</small></p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
